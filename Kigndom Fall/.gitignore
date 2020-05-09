@@ -43,3 +43,7 @@ ehthumbs.db
 [Dd]esktop.ini
 Corridor/Library/ShaderCache/
 Corridor/Library/metadata/
+
+
+Assets/Configs/google-services.json
+Assets/Configs/GoogleService-Info.plist
