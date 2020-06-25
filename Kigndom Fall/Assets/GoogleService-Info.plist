@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>981145144453-elbm3uj711flpg4vj9iihuu6v4h9o6se.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.981145144453-elbm3uj711flpg4vj9iihuu6v4h9o6se</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDdnCRgpvs_pgsNsOz9mMDehYr9rnFhuZ8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>981145144453</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dg.KingdomFall</string>
+	<key>PROJECT_ID</key>
+	<string>kingdom-fall-2020</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kingdom-fall-2020.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:981145144453:ios:64a1450ba6332cce29adec</string>
+	<key>DATABASE_URL</key>
+	<string>https://kingdom-fall-2020.firebaseio.com</string>
+</dict>
+</plist>
