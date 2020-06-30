@@ -10,7 +10,7 @@ public class RankingControl : MonoBehaviour
 
     public Transform rankingContainer;
     public Transform rankingTemplate;
-    private List<Transform> rankingEntryTransformList;
+    public List<Transform> rankingEntryTransformList;
 
     public void AbrirPopup()
     {
@@ -26,33 +26,37 @@ public class RankingControl : MonoBehaviour
     private void BuscarDados()
     {
         FirebaseDatabase.DefaultInstance
-            .GetReference("pontuacoes")
-            .GetValueAsync().ContinueWith(task =>
-            {
-                if (task.IsFaulted)
-                {
-                    Debug.LogError("Erro");
-                }
-                else if (task.IsCompleted)
-                {
-                    DataSnapshot snapshot = task.Result;
+        .GetReference("pontuacoes")
+        .ValueChanged += HandleValueChanged;
+    }
 
-                    List<RankingEntry> pontuacoes = new List<RankingEntry>();
+    void HandleValueChanged(object sender, ValueChangedEventArgs args)
+    {
+        if (args.DatabaseError != null)
+        {
+            Debug.LogError(args.DatabaseError.Message);
+            return;
+        }
 
-                    foreach (DataSnapshot ds in snapshot.Children)
-                    {
-                        RankingEntry re = JsonUtility.FromJson<RankingEntry>(ds.GetRawJsonValue());
-                        pontuacoes.Add(re);
-                    }
+        List<RankingEntry> pontuacoes = new List<RankingEntry>();
 
-                    this.GerarTabela(pontuacoes);
-                }
-            });
+        foreach (DataSnapshot ds in args.Snapshot.Children)
+        {
+            RankingEntry re = JsonUtility.FromJson<RankingEntry>(ds.GetRawJsonValue());
+            pontuacoes.Add(re);
+        }
+
+        this.GerarTabela(pontuacoes);
     }
 
     private void GerarTabela(List<RankingEntry> rankingEntryList)
     {
         rankingTemplate.gameObject.SetActive(false);
+
+        foreach (var x in rankingEntryTransformList)
+        {
+            Destroy(x.gameObject);
+        }
 
         if (rankingEntryList.Count > 0)
         {
@@ -70,10 +74,18 @@ public class RankingControl : MonoBehaviour
                 }
             }
 
+            int aux = 0;
+
             rankingEntryTransformList = new List<Transform>();
             foreach (RankingEntry rankingEntry in rankingEntryList)
             {
-                CreateRankingEntryTransform(rankingEntry, rankingContainer, rankingEntryTransformList);
+                if (aux == 10)
+                {
+                    break;
+                }
+
+                this.CreateRankingEntryTransform(rankingEntry, rankingContainer, rankingEntryTransformList);
+                aux++;
             }
         }
     }
