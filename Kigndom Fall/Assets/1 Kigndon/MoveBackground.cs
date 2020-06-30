@@ -29,12 +29,12 @@ public class MoveBackground : MonoBehaviour {
 
 
 
-		//if (x <= PontoDeDestino){
+		if (x <= PontoDeDestino){
 
-		//	Debug.Log ("hhhh");
-		//	x = PontoOriginal;
-		//	transform.position = new Vector3 (x, transform.position.y, transform.position.z);
-		//}
+			//Debug.Log ("hhhh");
+			x = PontoOriginal;
+			transform.position = new Vector3 (x, transform.position.y, transform.position.z);
+		}
 
 
 	}
