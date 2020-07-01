@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
 public class CharacterSelection : MonoBehaviour
 {
-    private int selectedCharacterIndex = 0;
+    public Canvas popup;
+    public Canvas popupErro;
+    public SpriteRenderer spriteRenderer;
+    public TMP_InputField nomeJogador;
 
-    [Header("List of characters")]
-    [SerializeField] private List<CharacterSelectObject> characterList = new List<CharacterSelectObject>();
+    private int selectedCharacterIndex;
 
-    [Header("UI References")]
-    [SerializeField] private Transform personagemTransform;
-    [SerializeField] private SpriteRenderer personagemSprite;
-    [SerializeField] private Animator personagemAnimator;
-    [SerializeField] private TextMeshProUGUI nomePersonagem;
+    private List<CharacterSelectObject> characterList = new List<CharacterSelectObject>();
+
+    private Transform personagemTransform;
+    private SpriteRenderer personagemSprite;
+    private Animator personagemAnimator;
+    private TextMeshProUGUI nomePersonagem;
 
     private void Start()
     {
@@ -43,6 +45,26 @@ public class CharacterSelection : MonoBehaviour
         UpdateCharacterSelectionUI();
     }
 
+    public void Iniciar()
+    {
+        string nomeJogadorStr = this.nomeJogador.text;
+
+        if (nomeJogadorStr.Length == 0)
+        {
+            popupErro.enabled = true;
+        }
+        else
+        {
+            GameData gd = new GameData(this.selectedCharacterIndex, nomeJogadorStr);
+
+            Teste.saveGameAtual = SaveSystem.SaveNewGame(gd);
+
+            this.FecharPopup();
+
+            new ChangeScene().TrocarCena("Jogo");
+        }
+    }
+
     private void UpdateCharacterSelectionUI()
     {
         personagemSprite.sprite = characterList[selectedCharacterIndex].spritePers;
@@ -53,16 +75,26 @@ public class CharacterSelection : MonoBehaviour
         personagemTransform.localScale = new Vector3(characterList[selectedCharacterIndex].scaleX, characterList[selectedCharacterIndex].scaleY, 250);
     }
 
-    [System.Serializable]
+    private void FecharPopup()
+    {
+        popup.enabled = false;
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = false;
+        }
+    }
+
     public class CharacterSelectObject
     {
         public float x;
         public float y;
+        public float z;
         public float scaleX;
         public float scaleY;
-        public float z;
         public Sprite spritePers;
         public RuntimeAnimatorController animatorPers;
         public string nomePers;
     }
+
 }

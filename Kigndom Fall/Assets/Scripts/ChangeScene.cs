@@ -1,18 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 
-public class ChangeScene : MonoBehaviour
+public class ChangeScene
 {
-    public string nomeDaCena;
-
-    public void TrocarCena()
+    public void TrocarCena(string nomeCena)
     {
-        SceneManager.LoadScene(nomeDaCena);
-    }
-
-    public void Sair()
-    {
-        Application.Quit();
+        SceneManager.LoadScene(nomeCena);
     }
 
 }
