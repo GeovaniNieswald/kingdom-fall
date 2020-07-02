@@ -15,8 +15,8 @@ public class GameData
         this.nomeJogador = nomeJogador;
 
         this.position = new float[3];
-        position[0] = -39.71f;
-        position[1] = -2.95f;
+        position[0] = -45.82751f;
+        position[1] = 0.09500222f;
         position[2] = 17.47733f;
 
         this.saveTime = DateTime.Now.ToFileTime();

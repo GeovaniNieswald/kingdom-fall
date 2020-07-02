@@ -11,12 +11,14 @@ public class CharacterSelection : MonoBehaviour
 
     private int selectedCharacterIndex;
 
-    private List<CharacterSelectObject> characterList = new List<CharacterSelectObject>();
+    [Header("List of Characters")]
+    [SerializeField] private List<CharacterSelectObject> characterList = new List<CharacterSelectObject>();
 
-    private Transform personagemTransform;
-    private SpriteRenderer personagemSprite;
-    private Animator personagemAnimator;
-    private TextMeshProUGUI nomePersonagem;
+    [Header("UI References")]
+    [SerializeField] private Transform personagemTransform;
+    [SerializeField] private SpriteRenderer personagemSprite;
+    [SerializeField] private Animator personagemAnimator;
+    [SerializeField] private TextMeshProUGUI nomePersonagem;
 
     private void Start()
     {
@@ -85,6 +87,7 @@ public class CharacterSelection : MonoBehaviour
         }
     }
 
+    [System.Serializable]
     public class CharacterSelectObject
     {
         public float x;

@@ -466,13 +466,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 12398569}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1992,13 +1992,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 253867101}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -5004,13 +5004,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1015263909}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -5447,13 +5447,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1059302415}
-    characterCount: 0
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -5905,13 +5905,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1209578117}
-    characterCount: 0
+    characterCount: 7
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -6541,13 +6541,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1287192791}
-    characterCount: 0
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -6697,13 +6697,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1308176062}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -8860,6 +8860,38 @@ MonoBehaviour:
   popupErro: {fileID: 118806394}
   spriteRenderer: {fileID: 853468146}
   nomeJogador: {fileID: 915831911}
+  characterList:
+  - x: 11
+    y: 45
+    z: -9720
+    scaleX: 250
+    scaleY: 250
+    spritePers: {fileID: 4723107735738678597, guid: 77ba605bbd83f4448bc8683510c3155e,
+      type: 3}
+    animatorPers: {fileID: 9100000, guid: 7843df7730432c14ea39bb81a273b3a1, type: 2}
+    nomePers: Guerreiro
+  - x: 41
+    y: -2
+    z: -9720
+    scaleX: 250
+    scaleY: 250
+    spritePers: {fileID: 4723107735738678597, guid: 5ad77f9f80802b3459d1a71a21f413fa,
+      type: 3}
+    animatorPers: {fileID: 9100000, guid: 667dd87b190d085458eaaaa629bcbf19, type: 2}
+    nomePers: Rei
+  - x: 5
+    y: -29
+    z: -9720
+    scaleX: 500
+    scaleY: 500
+    spritePers: {fileID: 4723107735738678597, guid: 174209194dbf2fb44aef1ea1ba76a2f1,
+      type: 3}
+    animatorPers: {fileID: 9100000, guid: 2a41e1c83609d9341b0571292a52eaf6, type: 2}
+    nomePers: Cavaleiro
+  personagemTransform: {fileID: 853468144}
+  personagemSprite: {fileID: 853468146}
+  personagemAnimator: {fileID: 853468145}
+  nomePersonagem: {fileID: 1287192791}
 --- !u!1 &2039354382
 GameObject:
   m_ObjectHideFlags: 0
