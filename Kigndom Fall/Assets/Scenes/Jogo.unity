@@ -41091,7 +41091,7 @@ GameObject:
   - component: {fileID: 2128187572}
   m_Layer: 0
   m_Name: gem_2
-  m_TagString: Itens
+  m_TagString: Pontos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
