@@ -14385,6 +14385,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &763528155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 763528157}
+  - component: {fileID: 763528156}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &763528156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763528155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fd27d0131bd2840b620aca2cfb0956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterList:
+  - spritePers: {fileID: 4723107735738678597, guid: 77ba605bbd83f4448bc8683510c3155e,
+      type: 3}
+    animatorPers: {fileID: 9100000, guid: 629cf39e53ceede45ba5480d43a51dac, type: 2}
+    scale: 1
+    circleColliderX: -0.05
+    circleColliderY: -0.415
+    circleColliderRadius: 0.15
+    boxColliderX: -0.05
+    boxColliderY: -0.1
+    boxColliderSizeX: 0.2
+    boxColliderSizeY: 0.5
+  - spritePers: {fileID: -7385789195546760866, guid: 5ad77f9f80802b3459d1a71a21f413fa,
+      type: 3}
+    animatorPers: {fileID: 9100000, guid: 2e9f9b9148091994ea02cf3befaa9463, type: 2}
+    scale: 0.9656856
+    circleColliderX: -0.13
+    circleColliderY: -0.237
+    circleColliderRadius: 0.15
+    boxColliderX: -0.1126976
+    boxColliderY: 0.04117447
+    boxColliderSizeX: 0.195132
+    boxColliderSizeY: 0.6849872
+  - spritePers: {fileID: 4723107735738678597, guid: 174209194dbf2fb44aef1ea1ba76a2f1,
+      type: 3}
+    animatorPers: {fileID: 9100000, guid: b344ca0968fb3fb4bbcd565580212fcf, type: 2}
+    scale: 1.724541
+    circleColliderX: -0.01
+    circleColliderY: -0.045
+    circleColliderRadius: 0.08574164
+    boxColliderX: -0.01460791
+    boxColliderY: 0.05425471
+    boxColliderSizeX: 0.1292158
+    boxColliderSizeY: 0.327396
+  personagemTrans: {fileID: 342784717}
+  personagemSpri: {fileID: 342784716}
+  personagemAni: {fileID: 342784715}
+  personagemCircleCollider2D: {fileID: 342784714}
+  personagemBoxCollider2D: {fileID: 342784713}
+--- !u!4 &763528157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763528155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8681449, y: -0.5261602, z: -9.5078125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &766052008
 GameObject:
   m_ObjectHideFlags: 0
