@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour{
 
     void OnTriggerEnter2D(Collider2D col) {
         
-        if(col.CompareTag("item")){
+        if(col.CompareTag("Pontos")){
             Destroy(col.gameObject);
             gm.points += 1;
         }
