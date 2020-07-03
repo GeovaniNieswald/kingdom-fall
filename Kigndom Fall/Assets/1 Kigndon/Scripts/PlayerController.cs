@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
 
+    private gameMaster gm;
     private Rigidbody2D body;
     private Animator animator;
     private SpriteRenderer sprite;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour{
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
     }
 
     // Update is called once per frame
@@ -48,5 +50,12 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
-    
+    void OnTriggerEnter2D(Collider2D col) {
+        
+        if(col.CompareTag("item")){
+            Destroy(col.gameObject);
+            gm.points += 1;
+        }
+    }
+
 }
