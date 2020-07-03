@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
@@ -22,6 +23,20 @@ public static class SaveSystem
         SalvarFirebase(gd);
 
         return saveName;
+    }
+
+    public static void SaveGame(GameData gd)
+    {
+        gd.saveTime = DateTime.Now.ToFileTime();
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/" + gd.nomeArquivo + ".kifbin";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        formatter.Serialize(stream, gd);
+        stream.Close();
+
+        SalvarFirebase(gd);
     }
 
     public static GameData LoadGame(string saveName)
@@ -70,7 +85,7 @@ public static class SaveSystem
         RankingEntry rankingEntry = new RankingEntry();
         rankingEntry.nome = gd.nomeJogador;
         rankingEntry.pontuacao = gd.pontuacao;
-        
+
         string json = JsonUtility.ToJson(rankingEntry);
 
         FirebaseDatabase.DefaultInstance

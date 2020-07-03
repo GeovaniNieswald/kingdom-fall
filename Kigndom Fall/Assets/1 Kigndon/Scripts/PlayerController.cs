@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour{
+public class PlayerController : MonoBehaviour
+{
 
     private gameMaster gm;
     private Rigidbody2D body;
@@ -18,7 +19,8 @@ public class PlayerController : MonoBehaviour{
     public float jumpForce = 200;
 
     // Start is called before the first frame update
-    void Start()    {
+    void Start()
+    {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
@@ -26,33 +28,40 @@ public class PlayerController : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update()    {
+    void Update()
+    {
         GetForwardInput();
         GetJumpInput();
     }
 
-    private void GetJumpInput(){
+    private void GetJumpInput()
+    {
 
-        if (Input.GetButtonDown("Jump") && foot.IsTouchingLayers(ground)) {
+        if (Input.GetButtonDown("Jump") && foot.IsTouchingLayers(ground))
+        {
             body.AddForce(Vector2.up * jumpForce);
         }
         animator.SetBool("IsOnGrond", foot.IsTouchingLayers(ground));
     }
 
-    private void GetForwardInput(){
-
+    private void GetForwardInput()
+    {
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * runSpeed, body.velocity.y);
         animator.SetFloat("xSpeed", Mathf.Abs(body.velocity.x));
-        if(!sprite.flipX && body.velocity.x < 0) {
+        if (!sprite.flipX && body.velocity.x < 0)
+        {
             sprite.flipX = true;
-        }else if (sprite.flipX && body.velocity.x > 0) {
+        }
+        else if (sprite.flipX && body.velocity.x > 0)
+        {
             sprite.flipX = false;
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col) {
-        
-        if(col.CompareTag("Pontos")){
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Pontos"))
+        {
             Destroy(col.gameObject);
             gm.points += 1;
         }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class Jogo : MonoBehaviour
 {
+    public Canvas popup;
+    private gameMaster gm;
+
     [Header("List of Characters")]
     [SerializeField] private List<Character> characterList = new List<Character>();
 
@@ -16,6 +19,11 @@ public class Jogo : MonoBehaviour
     void Start()
     {
         GameData gd = SaveSystem.LoadGame(Teste.saveGameAtual);
+
+        Teste.pontuacaoAtual = gd.pontuacao;
+
+        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
+        gm.points = Teste.pontuacaoAtual;
 
         int idCharacter = gd.idCharacter;
 
@@ -52,6 +60,41 @@ public class Jogo : MonoBehaviour
 
         this.personagemBoxCollider2D.offset = offsetBoxCollider;
         this.personagemBoxCollider2D.size = sizeBoxCollider;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            popup.enabled = !popup.enabled;
+        }
+    }
+
+    public void FecharPopup()
+    {
+        popup.enabled = false;
+    }
+
+    public void Salvar()
+    {
+        float[] posicao = new float[3];
+        posicao[0] = this.personagemTrans.localPosition.x;
+        posicao[1] = this.personagemTrans.localPosition.y;
+        posicao[2] = this.personagemTrans.localPosition.z;
+
+        GameData gd = SaveSystem.LoadGame(Teste.saveGameAtual);
+        gd.pontuacao = Teste.pontuacaoAtual;
+        gd.position = posicao;
+
+        SaveSystem.SaveGame(gd);
+
+        this.FecharPopup();
+    }
+
+    public void SairMenu()
+    {
+        this.FecharPopup();
+        new ChangeScene().TrocarCena("MenuPrincipal");
     }
 
     [System.Serializable]

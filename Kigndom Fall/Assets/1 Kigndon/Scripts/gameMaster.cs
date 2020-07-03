@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using TMPro;
 
 public class gameMaster : MonoBehaviour
 {
-    
+
     public int points;
 
-    public Text pointsText;
+    public TextMeshProUGUI pointsText;
 
-    void Update() {
-
-    pointsText.text = "Pontos: " + points;    
-    
+    void Update()
+    {
+        pointsText.text = "Pontos: " + points;
+        Teste.pontuacaoAtual = points;
     }
 }
 
