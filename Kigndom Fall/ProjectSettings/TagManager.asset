@@ -7,6 +7,10 @@ TagManager:
   - Itens
   - GameMaster
   - Pontos
+  - Dead
+  - Pirata
+  - Sabedoria
+  - Sabedoria10
   layers:
   - Default
   - TransparentFX
