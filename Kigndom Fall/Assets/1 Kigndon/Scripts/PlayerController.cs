@@ -64,22 +64,22 @@ public class PlayerController : MonoBehaviour
         if (col.CompareTag("Pontos"))
         {
             Destroy(col.gameObject);
-            gm.points += 1;
+            gm.points += 2;
         }
          if (col.CompareTag("Pirata"))
         {
             Destroy(col.gameObject);
-            gm.points -= gm.points/2;
+            gm.points = gm.points/2;
         }
         if (col.CompareTag("Sabedoria10"))
         {
             Destroy(col.gameObject);
-            gm.points += gm.points*10;
+            gm.points = gm.points*10;
         }
         if (col.CompareTag("Sabedoria"))
         {
             Destroy(col.gameObject);
-            gm.points += gm.points*2;
+            gm.points = gm.points*2;
         }
         if (col.CompareTag("Dead"))
         {
