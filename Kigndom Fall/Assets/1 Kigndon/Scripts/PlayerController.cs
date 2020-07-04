@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (col.CompareTag("Sabedoria10"))
         {
             Destroy(col.gameObject);
-            gm.points *= gm.points*10;
+            gm.points += gm.points*10;
         }
         if (col.CompareTag("Sabedoria"))
         {
