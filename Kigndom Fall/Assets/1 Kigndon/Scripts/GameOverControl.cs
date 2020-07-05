@@ -1,22 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameOverControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Canvas gameOver;
+    public Transform pers;
 
-    // Update is called once per frame
-    [System.Obsolete]
+    private bool perdeu = false;
+
     void Update()
     {
-        if(Input.GetButton("Jump")){
-            Application.LoadLevel("MenuPrincipal");
+        if (gameOver.enabled)
+        {
+            if (!perdeu)
+            {
+                Destroy(pers.gameObject);
+                perdeu = true;
+            }
+
+            if (Input.GetButton("Jump"))
+            {
+                new ChangeScene().TrocarCena("Jogo");
+            }
         }
-        
     }
+
 }

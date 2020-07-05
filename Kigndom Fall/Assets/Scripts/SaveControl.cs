@@ -26,7 +26,7 @@ public class SaveControl : MonoBehaviour
 
     public void CarregarJogo(int position)
     {
-        Teste.saveGameAtual = savesSE[position].nomeArquivo;
+        DadosGlobais.saveGameAtual = savesSE[position].nomeArquivo;
 
         this.FecharPopup();
 

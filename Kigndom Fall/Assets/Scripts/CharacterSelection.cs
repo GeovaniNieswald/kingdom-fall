@@ -59,7 +59,7 @@ public class CharacterSelection : MonoBehaviour
         {
             GameData gd = new GameData(this.selectedCharacterIndex, nomeJogadorStr);
 
-            Teste.saveGameAtual = SaveSystem.SaveNewGame(gd);
+            DadosGlobais.saveGameAtual = SaveSystem.SaveNewGame(gd);
 
             this.FecharPopup();
 

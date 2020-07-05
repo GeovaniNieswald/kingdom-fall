@@ -18,12 +18,12 @@ public class Jogo : MonoBehaviour
 
     void Start()
     {
-        GameData gd = SaveSystem.LoadGame(Teste.saveGameAtual);
+        GameData gd = SaveSystem.LoadGame(DadosGlobais.saveGameAtual);
 
-        Teste.pontuacaoAtual = gd.pontuacao;
+        DadosGlobais.pontuacaoAtual = gd.pontuacao;
 
         gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
-        gm.points = Teste.pontuacaoAtual;
+        gm.points = DadosGlobais.pontuacaoAtual;
 
         int idCharacter = gd.idCharacter;
 
@@ -82,8 +82,8 @@ public class Jogo : MonoBehaviour
         posicao[1] = this.personagemTrans.localPosition.y;
         posicao[2] = this.personagemTrans.localPosition.z;
 
-        GameData gd = SaveSystem.LoadGame(Teste.saveGameAtual);
-        gd.pontuacao = Teste.pontuacaoAtual;
+        GameData gd = SaveSystem.LoadGame(DadosGlobais.saveGameAtual);
+        gd.pontuacao = DadosGlobais.pontuacaoAtual;
         gd.position = posicao;
 
         SaveSystem.SaveGame(gd);

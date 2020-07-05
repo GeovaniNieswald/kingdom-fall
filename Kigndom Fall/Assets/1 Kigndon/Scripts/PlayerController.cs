@@ -5,20 +5,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Canvas gameOver;
 
     private gameMaster gm;
     private Rigidbody2D body;
     private Animator animator;
     private SpriteRenderer sprite;
-    public float runSpeed = 10;
-
     public CircleCollider2D foot;
-
     public LayerMask ground;
 
+    public float runSpeed = 10;
     public float jumpForce = 200;
 
-    // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -27,7 +25,6 @@ public class PlayerController : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         GetForwardInput();
@@ -36,11 +33,11 @@ public class PlayerController : MonoBehaviour
 
     private void GetJumpInput()
     {
-
         if (Input.GetButtonDown("Jump") && foot.IsTouchingLayers(ground))
         {
             body.AddForce(Vector2.up * jumpForce);
         }
+
         animator.SetBool("IsOnGrond", foot.IsTouchingLayers(ground));
     }
 
@@ -66,24 +63,24 @@ public class PlayerController : MonoBehaviour
             Destroy(col.gameObject);
             gm.points += 1;
         }
-         if (col.CompareTag("Pirata"))
+        else if (col.CompareTag("Pirata"))
         {
             Destroy(col.gameObject);
-            gm.points -= gm.points/2;
+            gm.points -= gm.points / 2;
         }
-        if (col.CompareTag("Sabedoria10"))
+        else if (col.CompareTag("Sabedoria10"))
         {
             Destroy(col.gameObject);
-            gm.points += gm.points*10;
+            gm.points += gm.points * 10;
         }
-        if (col.CompareTag("Sabedoria"))
+        else if (col.CompareTag("Sabedoria"))
         {
             Destroy(col.gameObject);
-            gm.points += gm.points*2;
+            gm.points += gm.points * 2;
         }
-        if (col.CompareTag("Dead"))
+        else if (col.CompareTag("Dead"))
         {
-        Application.LoadLevel("gameover");
+            gameOver.enabled = true;
         }
     }
 
